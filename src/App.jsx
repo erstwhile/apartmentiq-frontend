@@ -28,28 +28,28 @@ function App() {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">ApartmentIQ Properties</h1>
-      <p className="text-lg text-gray-600 mb-8 text-center">Explore our curated selection of properties.</p>
       {properties.length === 0 ? (
         <p className="text-gray-500 text-center">No properties available.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="space-y-4">
+
           {properties.map((property) => (
-            <div
+           <li
               key={property.id}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow flex flex-col"
             >
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">{property.name}</h2>
-              <p className="text-gray-600 mb-2">Address: {property.address}</p>
-              <p className="text-gray-600 mb-2">Year Built: {property.year_built}</p>
+              <h2 className="text-xl font-semibold text-gray-800 mb-1">{property.name}</h2>
+              <p className="text-gray-600 mb-1">Address: {property.address}</p>
+              <p className="text-gray-600 mb-1">Year Built: {property.year_built}</p>
               <Link
                 to={`/properties/${property.id}`}
-                className="block mt-4 text-blue-500 hover:underline font-medium"
+                className="block mt-2 text-blue-500 hover:underline font-medium"
               >
                 More Info
               </Link>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );

@@ -40,7 +40,7 @@ function PropertyDetail() {
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline"
           >
-            View Details
+            View Property Website
           </a>
         </p>
       )}
